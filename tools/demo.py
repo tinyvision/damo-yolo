@@ -328,7 +328,7 @@ def main():
         width = cap.get(cv2.CAP_PROP_FRAME_WIDTH)  # float
         height = cap.get(cv2.CAP_PROP_FRAME_HEIGHT)  # float
         fps = cap.get(cv2.CAP_PROP_FPS)
-        if args.save_result:
+        if args.save_result and input_type == 'video':
             save_path = os.path.join(args.output_dir, os.path.basename(args.path))
             print(f'inference result will be saved at {save_path}')
             vid_writer = cv2.VideoWriter(
